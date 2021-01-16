@@ -1,8 +1,9 @@
 import os
+# os.walk walks throught the director structure and returs root, directories and files recursively
 def getFiles(_path):
     fileList = []
     path = os.walk(_path)
-    for root, directories, files in path:
+    for root, _, files in path:
         for f in files:
             fileList.append(os.path.join(root,f))
     return fileList
